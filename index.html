@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rajdhani:wght@500&family=Rubik&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <img src="https://12factor.net/images/symbol.png" alt="" />
+      <h1>The Twelve-Factor App</h1>
+    </div>
+    <section class="intro">
+      <article>
+        <h1 id="introduction">Introduction</h1>
+        <p>
+          In the modern era, software is commonly delivered as a service: called
+          <span style="font-style:italic;">web apps</span>
+          , or
+          <span style="font-style:italic;">software-as-a-service</span>
+          . The twelve-factor app is a methodology for building
+          software-as-a-service apps that:
+        </p>
+        <ul>
+          <li>
+            Use <span style="font-weight:bold;">declarative</span> formats for
+            setup automation, to minimize time and cost for new developers
+            joining the project;
+          </li>
+          <li>
+            Have a <span style="font-weight:bold;">clean contract</span> with
+            the underlying operating system, offering
+            <span style="font-weight:bold;">maximum portability</span> between
+            execution environments;
+          </li>
+          <li>
+            Are suitable for
+            <span style="font-weight:bold;">deployment</span> on modern
+            <span style="font-weight:bold;">cloud platforms</span>
+            , obviating the need for servers and systems administration;
+          </li>
+          <li>
+            <span style="font-weight:bold;">Minimize divergence</span> between
+            development and production, enabling
+            <span style="font-weight:bold;">continuous deployment</span> for
+            maximum agility;
+          </li>
+          <li>
+            And can <span style="font-weight:bold;">scale up</span> without
+            significant changes to tooling, architecture, or development
+            practices.
+          </li>
+        </ul>
+        <p>
+          The twelve-factor methodology can be applied to apps written in any
+          programming language, and which use any combination of backing
+          services(database, queue, memory cache, etc).
+        </p>
+      </article>
+
+      <article>
+        <h1 id="background">Background</h1>
+        <p>
+          The contributors to this document have been directly involved in the
+          development and deployment of hundreds of apps, and indirectly
+          witnessed the development, operation, and scaling of hundreds of
+          thousands of apps via our work on the
+          <a href="https://www.heroku.com/" target="_blank">Heroku</a> platform.
+        </p>
+        <p>
+          This document synthesizes all of our experience and observations on a
+          wide variety of software-as-a-service apps in the wild. It is a
+          triangulation on ideal practices for app development, paying
+          particular attention to the dynamics of the organic growth of an app
+          over time, the dynamics of collaboration between developers working on
+          the app’s codebase, and
+          <a
+            href="https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts"
+            target="_blank"
+            >avoiding the cost of software erosion</a
+          >.
+        </p>
+        <p>
+          Our motivation is to raise awareness of some systemic problems we’ve
+          seen in modern application development, to provide a shared vocabulary
+          for discussing those problems, and to offer a set of broad conceptual
+          solutions to those problems with accompanying terminology. The format
+          is inspired by Martin Fowler’s books
+          <em
+            ><a
+              href="https://books.google.com/books/about/Patterns_of_enterprise_application_archi.html?id=FyWZt5DdvFkC"
+              target="_blank"
+              >Patterns of Enterprise Application Architecture</a
+            ></em
+          >
+          and
+          <em
+            ><a
+              href="https://books.google.com/books/about/Refactoring.html?id=1MsETFPD3I0C"
+              target="_blank"
+              >Refactoring</a
+            ></em
+          >.
+        </p>
+      </article>
+
+      <article>
+        <h1 id="who_should_read_this_article">Who should read this article</h1>
+        <p>
+          Any developer building applications which run as a service. Ops
+          engineers who deploy or manage such applications.
+        </p>
+      </article>
+    </section>
+
+    <section class="twelve">
+      <h1 id="twelve_factors">The Twelve Factors</h1>
+
+      <ol type="I">
+        <li id="1_codebase">
+          <a href="https://12factor.net/codebase">Codebase</a>
+          <h3 id="one_codebase">
+            One codebase tracked in revision control, many deploys
+          </h3>
+        </li>
+
+        <li id="2_dependencies">
+          <a href="https://12factor.net/dependencies">Dependencies</a>
+          <h3 id="explicitly_declare">
+            Explicitly declare and isolte dependencies
+          </h3>
+        </li>
+
+        <li id="3_config">
+          <a href="https://12factor.net/config">Config</a>
+          <h3 id="store_config">Store config in the environment</h3>
+        </li>
+
+        <li id="4_backing_services">
+          <a href="https://12factor.net/backing-services">Backing Services</a>
+          <h3 id="treat_backing_services">
+            Treat backing services as attatched resources
+          </h3>
+        </li>
+
+        <li id="5_build_release_run">
+          <a href="https://12factor.net/build-release-run"
+            >Build, Release, Run</a
+          >
+          <h3 id="strictly_separate">Strictly separate build and run stages</h3>
+        </li>
+
+        <li id="6_processes">
+          <a href="https://12factor.net/processes">Processes</a>
+          <h3 id="execute_the_app">
+            Execute the app as one or more stateless processes
+          </h3>
+        </li>
+
+        <li id="7_port_binding">
+          <a href="https://12factor.net/port-binding">Port Binding</a>
+          <h3 id="export_services">Export services via port binding</h3>
+        </li>
+
+        <li id="8_concurrency">
+          <a href="https://12factor.net/concurrency">Concurrency</a>
+          <h3 id="scale_out">Scale out via the process model</h3>
+        </li>
+
+        <li id="9_disposability">
+          <a href="https://12factor.net/disposability">Disposability</a>
+          <h3 id="maximizes_robustness">
+            Maximizes robustness with fast startup and graceful shutdown
+          </h3>
+        </li>
+
+        <li id="10_dev_prod_parity">
+          <a href="https://12factor.net/dev-prod-parity">Dev/prod Parity</a>
+          <h3 id="keep_development">
+            Keep development, staging, and production as similar as possible
+          </h3>
+        </li>
+
+        <li id="11_logs">
+          <a href="https://12factor.net/logs">Logs</a>
+          <h3 id="treat_logs">Treat logs as event streams</h3>
+        </li>
+
+        <li id="12_admin_processes">
+          <a href="https://12factor.net/admin-processes">Admin Processes</a>
+          <h3 id="run_admin_management">Run admin/management processes</h3>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      <div id="credits_languages">
+        <a href="https://12factor.net/tr/">Turkish(tr)</a>
+        |
+        <a href="https://12factor.net/it/">Italiano(it)</a>
+        |
+        <a href="https://12factor.net/cs/">Česky(cs)</a>
+        |
+        <a href="https://12factor.net/ko/">한국어(ko)</a>
+        |
+        <a href="https://12factor.net/">English(en)</a>
+        |
+        <a href="https://12factor.net/vi/">Tiếng Việt(vi)</a>
+        |
+        <a href="https://12factor.net/es/">Español(es)</a>
+        |
+        <a href="https://12factor.net/pl/">Polski(pl)</a>
+        |
+        <a href="https://12factor.net/de/">Deutsch(de)</a>
+        |
+        <a href="https://12factor.net/sk/">Slovensky(sk)</a>
+        |
+        <a href="https://12factor.net/ru/">Русский(ru)</a>
+        |
+        <a href="https://12factor.net/uk/">Українська(uk)</a>
+        |
+        <a href="https://12factor.net/th/">ภาษาไทย(th)</a>
+        |
+        <a href="https://12factor.net/zh_cn/">简体中文(zh_cn)</a>
+        |
+        <a href="https://12factor.net/ja/">日本語(ja)</a>
+        |
+        <a href="https://12factor.net/fr/">Français(fr)</a>
+        |
+        <a href="https://12factor.net/pt_br/"> Brazilian Portuguese(pt_br)</a>
+        |
+        <a href="https://12factor.net/el/">Ελληνικά(el)</a>
+      </div>
+
+      <div>Written by Andrew Wiggins</div>
+      <div>Last updated 2017</div>
+
+      <div id="sourcecode">
+        <a href="https://github.com/heroku/12factor">Sourcecode</a>
+      </div>
+      <div id="download_epub_book">
+        <a href="/12factor.epub">Download ePub Book</a>
+      </div>
+      <div id="privacy_policy">
+        <a href="https://www.salesforce.com/company/privacy/">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>

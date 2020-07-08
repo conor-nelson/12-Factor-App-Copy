@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  max-width: none;
+  min-width: 0;
+  font-family: "Rajdhani", sans-serif;
+}
+
+article {
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+
+article,
+footer > *,
+.twelve ol {
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer a {
+  color: grey;
+  font-size: 12px;
+}
+
+div .credits_languages {
+  color: white;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 1rem;
+  align-items: center;
+  max-width: none;
+  min-width: 0;
+}
+
+section.intro {
+  padding: 15pt;
+  line-height: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+  max-width: none;
+  min-width: 0;
+}
+
+span {
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+}
+section.intro a {
+  color: black;
+  font-weight: 800;
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  font-size: 10pt;
+}
+
+section.intro h1 {
+  padding: 15px;
+  text-align: center;
+  font-size: 22pt;
+  font-weight: 700;
+}
+
+section.intro p {
+  font-size: 11pt;
+  line-height: 17px;
+}
+
+section.intro li {
+  font-size: 11pt;
+  margin-right: 2pt;
+  font-weight: 150;
+  line-height: 17px;
+}
+
+section.twelve {
+  background-color: grey;
+  margin-top: 10pt;
+  padding: 12pt;
+  max-width: none;
+  min-width: 0;
+  opacity: 90%;
+}
+
+section.twelve li {
+  padding-top: 1px;
+  padding-bottom: 1.5px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  color: black;
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+section.twelve h3 {
+  padding: 0px;
+  margin: 10px;
+  color: black;
+  font-size: 12pt;
+  font-weight: 400;
+}
+
+section.twelve a {
+  color: black;
+  text-decoration: none;
+}
+
+section.twelve a:hover {
+  border-bottom: 1px dashed;
+}
+
+section.twelve h1 {
+  font-size: 30pt;
+  margin-top: 35pt;
+  margin-bottom: 25pt;
+  text-align: center;
+  font-weight: 1000;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+footer div {
+  line-height: 10pt;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 10pt;
+  font-family: "Rubik", sans-serif;
+}
+
+footer a {
+  line-height: 20px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 11px;
+  font-size: 8pt;
+  font-family: "Quicksand", sans-serif;
+}
+
+div#sourcecode a {
+  line-height: 10px;
+  font-size: 8pt;
+  font-family: "Rubik", sans-serif;
+}
+div#download_epub_book a {
+  line-height: 10px;
+  font-size: 8pt;
+  font-family: "Rubik", sans-serif;
+}
+div#privacy_policy a {
+  line-height: 10px;
+  font-size: 8pt;
+  font-family: "Rubik", sans-serif;
+}
+
+.twelve ol {
+  list-style-position: inside;
+}
+
+.twelve ol h3 {
+  margin-left: 0;
+}
